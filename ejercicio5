@@ -1,1 +1,31 @@
+package paquete;
 
+import java.util.Scanner;
+
+public class EJERCICIO5 {
+
+    public static double cargo(int horas) {
+        if (horas <= 0) {
+            return 0;
+        }
+
+        double total = 3.00 + (horas - 1) * 0.50;
+
+        if (total > 12.00) {
+            total = 12.00;
+        }
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese el número de horas: ");
+        int h = sc.nextInt();
+
+        System.out.println("El cargo es: S/ " + cargo(h));
+
+        sc.close();
+    }
+}
