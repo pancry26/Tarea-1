@@ -1,1 +1,41 @@
+package paquete;
 
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] numeros = new int[10];
+
+        System.out.println("Ingrese 10 números, cada uno debe ser mayor al anterior:");
+
+        for (int i = 0; i < numeros.length; i++) {
+            int valor;
+
+            while (true) {
+                System.out.print("Ingrese el número " + (i + 1) + ": ");
+                valor = sc.nextInt();
+
+                if (i == 0) {
+                    break;
+                }
+
+                if (valor > numeros[i - 1]) {
+                    break;
+                } else {
+                    System.out.println("Error: el número debe ser mayor que " + numeros[i - 1] + ". Intente de nuevo.");
+                }
+            }
+
+            numeros[i] = valor;
+        }
+
+        System.out.println("\nArreglo ingresado correctamente:");
+        for (int n : numeros) {
+            System.out.print(n + " ");
+        }
+
+        sc.close();
+    }
+}
