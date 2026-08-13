@@ -1,1 +1,27 @@
+package paquete;
 
+import java.util.Scanner;
+
+public class EJERCICIO6 {
+
+    public static int aSegundos(int horas, int minutos, int segundos) {
+        return horas * 3600 + minutos * 60 + segundos;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese horas: ");
+        int h = sc.nextInt();
+
+        System.out.print("Ingrese minutos: ");
+        int m = sc.nextInt();
+
+        System.out.print("Ingrese segundos: ");
+        int s = sc.nextInt();
+
+        System.out.println("Equivalente en segundos: " + aSegundos(h, m, s));
+
+        sc.close();
+    }
+}
